@@ -14,6 +14,7 @@ namespace ProjectDemo.entity
         private List<Member> members;
         private string startTime;
         private string endTime;
+        int c;
 
         public long Id { get => id; set => id = value; }
         public Member Member { get => member; set => member = value; }

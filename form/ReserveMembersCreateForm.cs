@@ -1,4 +1,5 @@
 ﻿using ProjectDemo.entity;
+using ProjectDemo.form;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,17 +12,17 @@ using System.Windows.Forms;
 
 namespace ProjectDemo
 {
-    public partial class ReserveMembersCreate : Form
+    public partial class ReserveMembersCreateForm : Form
     {
-        private ReserveList form1;
+        private ReserveCreateForm reserveCreateForm;
         private List<Member> members;
 
         public List<Member> Members { get => members; set => members = value; }
 
-        public ReserveMembersCreate(ReserveList form1, List<Member> members)
+        public ReserveMembersCreateForm(ReserveCreateForm form1, List<Member> members)
         {
             InitializeComponent();
-            this.form1 = form1;
+            this.reserveCreateForm = form1;
             this.members = members;
         }
 
@@ -50,7 +51,7 @@ namespace ProjectDemo
             string text = "";
             foreach (Member member in members) text += (member.Name + " ");
 
-            form1.textBox1.Text = text;
+            reserveCreateForm.textBox1.Text = text;
 
             Close();
 

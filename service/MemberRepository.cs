@@ -15,7 +15,7 @@ namespace ProjectDemo.service
 
         public Member findByName(string name)
         {
-            members = ReserveList.members;
+            members = ReserveListForm.members;
             foreach (Member member in members)
             {
                 if (member.Name == name)

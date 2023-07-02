@@ -1,6 +1,6 @@
 ﻿namespace ProjectDemo
 {
-    partial class ReserveMembersCreate
+    partial class ReserveMemberCreateForm
     {
         /// <summary>
         /// Required designer variable.
@@ -20,6 +20,16 @@
             base.Dispose(disposing);
         }
 
+
+
+
+
+
+
+
+
+
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -28,56 +38,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            checkedListBox1 = new CheckedListBox();
             button1 = new Button();
             button2 = new Button();
             SuspendLayout();
             // 
-            // checkedListBox1
-            // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Location = new Point(28, 29);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(431, 400);
-            checkedListBox1.TabIndex = 0;
-            // 
             // button1
             // 
-            button1.Location = new Point(28, 446);
+            button1.Location = new Point(45, 424);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
-            button1.TabIndex = 15;
+            button1.TabIndex = 16;
             button1.Text = "추가";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(109, 446);
+            button2.Location = new Point(126, 424);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
-            button2.TabIndex = 16;
+            button2.TabIndex = 17;
             button2.Text = "이전으로";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
-            // Form2
+            // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(486, 519);
+            ClientSize = new Size(492, 504);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(checkedListBox1);
-            Name = "Form2";
-            Text = "Form2";
-            Load += Form2_Load;
+            Name = "Form3";
+            Text = "Form3";
             ResumeLayout(false);
         }
 
         #endregion
 
-        private CheckedListBox checkedListBox1;
         private Button button1;
         private Button button2;
     }

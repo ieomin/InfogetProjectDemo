@@ -1,4 +1,5 @@
 ﻿using ProjectDemo.entity;
+using ProjectDemo.form;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 namespace ProjectDemo
 {
 
-    public partial class ReserveMemberCreate : Form
+    public partial class ReserveMemberCreateForm : Form
     {
         private List<Member> members;
         private Panel radioPanel;
@@ -30,7 +31,13 @@ namespace ProjectDemo
             }
         }
 
-        public ReserveMemberCreate(List<Member> members)
+
+        public ReserveMemberCreateForm()
+        {
+        }
+
+
+        public ReserveMemberCreateForm(List<Member> members)
         {
             InitializeComponent();
             this.members = members;
@@ -61,10 +68,10 @@ namespace ProjectDemo
         {
             string selectedRadioButtonText = GetSelectedRadioButtonText();
 
-            ReserveList form1 = Application.OpenForms.OfType<ReserveList>().FirstOrDefault();
-            if (form1 != null)
+            ReserveCreateForm reserveCreate = Application.OpenForms.OfType<ReserveCreateForm>().FirstOrDefault();
+            if (reserveCreate != null)
             {
-                form1.textBox3.Text = selectedRadioButtonText;
+                reserveCreate.textBox3.Text = selectedRadioButtonText;
             }
 
             this.MemberName = selectedRadioButtonText;

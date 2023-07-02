@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="form\ReserveCreate.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="form\ReserveList.cs">
+    <Compile Update="form\ReserveCreateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="form\ReserveMembersCreate.cs">
+    <Compile Update="form\ReserveListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="form\ReserveMemberCreate.cs">
+    <Compile Update="form\ReserveMembersCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="form\ReserveMemberCreateForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -13,14 +13,21 @@
         "packagesPath": "C:\\Users\\dlqja\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\dlqja\\Desktop\\COMPANY\\ws\\ProjectDemo\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\DevExpress 21.1\\.NET Core Desktop Libraries\\Offline Packages"
+        ],
         "configFilePaths": [
           "C:\\Users\\dlqja\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0-windows"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\DevExpress 21.1\\.NET Core Desktop Libraries\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },

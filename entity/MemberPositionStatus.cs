@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectDemo.entity
 {
-    public enum PositionStatus
+    public enum MemberPositionStatus
     {
         대표, 부사장, 책임, 선임, 주임
     }

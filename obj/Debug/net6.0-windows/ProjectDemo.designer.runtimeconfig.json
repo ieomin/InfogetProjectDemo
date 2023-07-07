@@ -13,7 +13,8 @@
     ],
     "additionalProbingPaths": [
       "C:\\Users\\dlqja\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\dlqja\\.nuget\\packages"
+      "C:\\Users\\dlqja\\.nuget\\packages",
+      "C:\\Program Files (x86)\\DevExpress 21.1\\.NET Core Desktop Libraries\\Offline Packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

@@ -11,11 +11,25 @@ namespace ProjectDemo.service
     {
         private List<Member> members;
 
-        public MemberRepository() { }
+        private static MemberRepository instance;
+
+        private MemberRepository() { }
+
+        public static MemberRepository Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new MemberRepository();
+                }
+                return instance;
+            }
+        }
 
         public Member findByName(string name)
         {
-            members = ReserveListForm.members;
+            members = ReserveListForm.MemberDB;
             foreach (Member member in members)
             {
                 if (member.Name == name)

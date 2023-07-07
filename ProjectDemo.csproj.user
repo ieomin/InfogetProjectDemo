@@ -4,13 +4,19 @@
     <Compile Update="form\ReserveCreateForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="form\ReserveDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="form\ReserveListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="form\ReserveMembersCreateForm.cs">
+    <Compile Update="form\ReserveMembersCreateUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="form\ReserveMemberCreateForm.cs">
+    <Compile Update="form\ReserveMemberCreateUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="form\ReserveUpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

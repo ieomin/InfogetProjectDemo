@@ -20,5 +20,7 @@ C:\Users\dlqja\Desktop\COMPANY\ws\ProjectDemo\bin\Debug\net6.0-windows\LiveChart
 C:\Users\dlqja\Desktop\COMPANY\ws\ProjectDemo\obj\Debug\net6.0-windows\ProjectDemo.csproj.CopyComplete
 C:\Users\dlqja\Desktop\COMPANY\ws\ProjectDemo\obj\Debug\net6.0-windows\ProjectDemo.form.ReserveCreateForm.resources
 C:\Users\dlqja\Desktop\COMPANY\ws\ProjectDemo\obj\Debug\net6.0-windows\ProjectDemo.ReserveListForm.resources
-C:\Users\dlqja\Desktop\COMPANY\ws\ProjectDemo\obj\Debug\net6.0-windows\ProjectDemo.ReserveMemberCreateForm.resources
-C:\Users\dlqja\Desktop\COMPANY\ws\ProjectDemo\obj\Debug\net6.0-windows\ProjectDemo.ReserveMembersCreateForm.resources
+C:\Users\dlqja\Desktop\COMPANY\ws\ProjectDemo\obj\Debug\net6.0-windows\ProjectDemo.form.ReserveDetailForm.resources
+C:\Users\dlqja\Desktop\COMPANY\ws\ProjectDemo\obj\Debug\net6.0-windows\ProjectDemo.form.ReserveUpdateForm.resources
+C:\Users\dlqja\Desktop\COMPANY\ws\ProjectDemo\obj\Debug\net6.0-windows\ProjectDemo.ReserveMemberCreateUpdateForm.resources
+C:\Users\dlqja\Desktop\COMPANY\ws\ProjectDemo\obj\Debug\net6.0-windows\ProjectDemo.ReserveMembersCreateUpdateForm.resources

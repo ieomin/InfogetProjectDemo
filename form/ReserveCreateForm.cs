@@ -12,14 +12,21 @@ using System.Windows.Forms;
 
 namespace ProjectDemo.form
 {
+
     public partial class ReserveCreateForm : Form
     {
-        private ReserveMemberCreateUpdateForm reserveMemberCreateUpdateForm;
         private ReserveMembersCreateUpdateForm reserveMembersCreateUpdateForm;
+        public delegate void MyDelegate();
+        public static event MyDelegate toDatagridview;
+        private ReserveListForm reserveListForm;
 
-        public ReserveCreateForm()
+        public ReserveCreateForm(ReserveListForm reserveListForm)
         {
             InitializeComponent();
+            comboBox1.DataSource = new List<string>(ReserveListForm.timeDB);
+            comboBox2.DataSource = new List<string>(ReserveListForm.timeDB);
+            ReserveMembersCreateUpdateForm.myEventHandler1 += toMembersTextbox;
+            this.reserveListForm = reserveListForm;
         }
 
         private string combobox1String, combobox2String;
@@ -34,17 +41,6 @@ namespace ProjectDemo.form
             combobox2String = comboBox2.SelectedItem.ToString();
         }
 
-        private void reserveMemberCreateButton_Click(object sender, EventArgs e)
-        {
-            if (reserveMemberCreateUpdateForm != null)
-            {
-                reserveMemberCreateUpdateForm.Dispose();
-                reserveMemberCreateUpdateForm = null;
-            }
-            reserveMemberCreateUpdateForm = new ReserveMemberCreateUpdateForm(this, 0);
-            reserveMemberCreateUpdateForm.Show();
-        }
-
         private void reserveMembersCreateButton_Click(object sender, EventArgs e)
         {
             if (reserveMembersCreateUpdateForm != null)
@@ -52,20 +48,26 @@ namespace ProjectDemo.form
                 reserveMembersCreateUpdateForm.Dispose();
                 reserveMembersCreateUpdateForm = null;
             }
-            reserveMembersCreateUpdateForm = new ReserveMembersCreateUpdateForm(this, 0);
+            reserveMembersCreateUpdateForm = new ReserveMembersCreateUpdateForm(this, null);
             reserveMembersCreateUpdateForm.Show();
         }
 
         private void reserveCreateButton_Click(object sender, EventArgs e)
         {
-            ReserveListForm.dataGridView1.Rows.Clear();
-            Member findMember = MemberRepository.Instance.findByName(reserveMemberCreateUpdateForm.MemberName);
-            Reserve reserve = ReserveService.Instance.createReserve(findMember, textBox2.Text, ReserveMembersCreateUpdateForm.members, combobox1String, combobox2String);
+            //ReserveListForm.dataGridView1.Rows.Clear();
+            toDatagridview();
+            Reserve reserve = ReserveService.Instance.createReserve(MemberLoginForm.loginMember, purposeTextbox.Text, ReserveMembersCreateUpdateForm.members, combobox1String, combobox2String);
             ReserveListForm.ReserveDB.Add(reserve);
 
-            ReserveListForm.refreshDataGridView();
+            reserveListForm.refreshDataGridView();
 
             this.Close();
         }
+
+        private void toMembersTextbox(string memberNames)
+        {
+            membersTextbox.Text = memberNames;
+        }
+
     }
 }

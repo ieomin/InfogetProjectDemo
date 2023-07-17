@@ -32,49 +32,26 @@ namespace ProjectDemo.form
         /// </summary>
         private void InitializeComponent()
         {
-            reserveMemberCreateButton = new Button();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            purposeTextbox = new TextBox();
             label7 = new Label();
-            label6 = new Label();
             label5 = new Label();
             reserveMembersCreateButton = new Button();
             reserveCreateButton = new Button();
-            textBox1 = new TextBox();
+            membersTextbox = new TextBox();
             label3 = new Label();
             label1 = new Label();
             panel1 = new Panel();
-            button1 = new Button();
-            label2 = new Label();
-            label4 = new Label();
-            comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // reserveMemberCreateButton
+            // purposeTextbox
             // 
-            reserveMemberCreateButton.Location = new Point(485, 142);
-            reserveMemberCreateButton.Name = "reserveMemberCreateButton";
-            reserveMemberCreateButton.Size = new Size(96, 23);
-            reserveMemberCreateButton.TabIndex = 40;
-            reserveMemberCreateButton.Text = "예약자 생성";
-            reserveMemberCreateButton.UseVisualStyleBackColor = true;
-            reserveMemberCreateButton.Click += reserveMemberCreateButton_Click;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(316, 143);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(163, 23);
-            textBox3.TabIndex = 39;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(316, 172);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(163, 23);
-            textBox2.TabIndex = 38;
+            purposeTextbox.Location = new Point(316, 172);
+            purposeTextbox.Name = "purposeTextbox";
+            purposeTextbox.Size = new Size(163, 23);
+            purposeTextbox.TabIndex = 38;
             // 
             // label7
             // 
@@ -84,15 +61,6 @@ namespace ProjectDemo.form
             label7.Size = new Size(55, 15);
             label7.TabIndex = 37;
             label7.Text = "예약목적";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(267, 150);
-            label6.Name = "label6";
-            label6.Size = new Size(43, 15);
-            label6.TabIndex = 36;
-            label6.Text = "예약자";
             // 
             // label5
             // 
@@ -123,12 +91,12 @@ namespace ProjectDemo.form
             reserveCreateButton.UseVisualStyleBackColor = true;
             reserveCreateButton.Click += reserveCreateButton_Click;
             // 
-            // textBox1
+            // membersTextbox
             // 
-            textBox1.Location = new Point(316, 200);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(163, 23);
-            textBox1.TabIndex = 27;
+            membersTextbox.Location = new Point(316, 200);
+            membersTextbox.Name = "membersTextbox";
+            membersTextbox.Size = new Size(163, 23);
+            membersTextbox.TabIndex = 27;
             // 
             // label3
             // 
@@ -152,61 +120,18 @@ namespace ProjectDemo.form
             // 
             panel1.Controls.Add(comboBox2);
             panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(label6);
             panel1.Controls.Add(label7);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(purposeTextbox);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label4);
             panel1.Controls.Add(reserveCreateButton);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(membersTextbox);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(944, 501);
             panel1.TabIndex = 41;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(397, 287);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 42;
-            button1.Text = "창닫기";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            label2.BorderStyle = BorderStyle.FixedSingle;
-            label2.Location = new Point(0, 483);
-            label2.Name = "label2";
-            label2.Size = new Size(944, 18);
-            label2.TabIndex = 1;
-            label2.Text = "v1.0";
-            // 
-            // label4
-            // 
-            label4.BorderStyle = BorderStyle.FixedSingle;
-            label4.Location = new Point(0, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(944, 23);
-            label4.TabIndex = 0;
-            label4.Text = "InfogetStartProject";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(316, 229);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(163, 23);
-            comboBox1.TabIndex = 45;
-
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBox1.Items.AddRange(ReserveListForm.timeDB.ToArray());
-            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
             // 
             // comboBox2
             // 
@@ -215,18 +140,22 @@ namespace ProjectDemo.form
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(163, 23);
             comboBox2.TabIndex = 46;
-
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDown;
-            comboBox2.Items.AddRange(ReserveListForm.timeDB.ToArray());
             comboBox2.SelectedIndexChanged += ComboBox2_SelectedIndexChanged;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(316, 229);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(163, 23);
+            comboBox1.TabIndex = 45;
+            comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;
             // 
             // ReserveCreateForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(944, 501);
-            Controls.Add(reserveMemberCreateButton);
-            Controls.Add(textBox3);
             Controls.Add(reserveMembersCreateButton);
             Controls.Add(panel1);
             Name = "ReserveCreateForm";
@@ -234,27 +163,19 @@ namespace ProjectDemo.form
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Button reserveMemberCreateButton;
-        public TextBox textBox3;
-        public TextBox textBox2;
+        private TextBox purposeTextbox;
         private Label label7;
-        private Label label6;
         private Label label5;
         private Button reserveMembersCreateButton;
         private Button reserveCreateButton;
-        public TextBox textBox1;
         private Label label3;
         private Label label1;
         private Panel panel1;
-        private Label label2;
-        private Label label4;
-        private Button button1;
         private ComboBox comboBox2;
         private ComboBox comboBox1;
+        private TextBox membersTextbox;
     }
 }

@@ -30,13 +30,13 @@
         {
             dataGridView1 = new DataGridView();
             reserveUpdateButton = new Button();
-            reserveMemberUpdateButton = new Button();
             reserveMembersUpdateButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 12);
             dataGridView1.Name = "dataGridView1";
@@ -44,12 +44,10 @@
             dataGridView1.Size = new Size(776, 394);
             dataGridView1.TabIndex = 0;
             dataGridView1.EditingControlShowing += dataGridView1_EditingControlShowing;
-            dataGridView1.AllowUserToAddRows = false;
-
             // 
             // reserveUpdateButton
             // 
-            reserveUpdateButton.Location = new Point(464, 415);
+            reserveUpdateButton.Location = new Point(393, 415);
             reserveUpdateButton.Name = "reserveUpdateButton";
             reserveUpdateButton.Size = new Size(75, 23);
             reserveUpdateButton.TabIndex = 1;
@@ -57,19 +55,9 @@
             reserveUpdateButton.UseVisualStyleBackColor = true;
             reserveUpdateButton.Click += reserveUpdateButton_Click;
             // 
-            // reserveMemberUpdateButton
-            // 
-            reserveMemberUpdateButton.Location = new Point(245, 415);
-            reserveMemberUpdateButton.Name = "reserveMemberUpdateButton";
-            reserveMemberUpdateButton.Size = new Size(96, 23);
-            reserveMemberUpdateButton.TabIndex = 2;
-            reserveMemberUpdateButton.Text = "예약자명 변경";
-            reserveMemberUpdateButton.UseVisualStyleBackColor = true;
-            reserveMemberUpdateButton.Click += reserveMemberUpdateButton_Click;
-            // 
             // reserveMembersUpdateButton
             // 
-            reserveMembersUpdateButton.Location = new Point(347, 415);
+            reserveMembersUpdateButton.Location = new Point(276, 415);
             reserveMembersUpdateButton.Name = "reserveMembersUpdateButton";
             reserveMembersUpdateButton.Size = new Size(111, 23);
             reserveMembersUpdateButton.TabIndex = 3;
@@ -83,7 +71,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(reserveMembersUpdateButton);
-            Controls.Add(reserveMemberUpdateButton);
             Controls.Add(reserveUpdateButton);
             Controls.Add(dataGridView1);
             Name = "ReserveUpdateForm";
@@ -94,8 +81,7 @@
 
         #endregion
         private Button reserveUpdateButton;
-        private Button reserveMemberUpdateButton;
         private Button reserveMembersUpdateButton;
-        public static DataGridView dataGridView1;
+        private DataGridView dataGridView1;
     }
 }

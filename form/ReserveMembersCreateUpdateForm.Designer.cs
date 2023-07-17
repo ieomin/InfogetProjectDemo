@@ -71,7 +71,6 @@ namespace ProjectDemo
             Controls.Add(checkedListBox1);
             Name = "ReserveMembersCreateUpdateForm";
             Text = "Form2";
-            Load += Form2_Load;
             ResumeLayout(false);
         }
 

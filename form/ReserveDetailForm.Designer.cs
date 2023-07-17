@@ -82,6 +82,6 @@
         #endregion
         private Button reserveUpdateButton;
         private Button reserveDeleteButton;
-        public static DataGridView dataGridView1;
+        private DataGridView dataGridView1;
     }
 }

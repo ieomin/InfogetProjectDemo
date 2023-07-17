@@ -1,4 +1,5 @@
 ﻿using ProjectDemo.entity;
+using ProjectDemo.service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,14 +14,20 @@ namespace ProjectDemo.form
 {
     public partial class ReserveDetailForm : Form
     {
+        // 생성자에 보낼거
         private Reserve reserve;
 
+        // 갈거
         private ReserveUpdateForm reserveUpdateForm;
 
-        public ReserveDetailForm(Reserve reserve)
+        private ReserveListForm reserveListForm;
+
+        public ReserveDetailForm(Reserve reserve, ReserveListForm reserveListForm)
         {
             InitializeComponent();
             this.reserve = reserve;
+            this.reserveListForm = reserveListForm;
+            ReserveUpdateForm.myDelegate += ReserveUpdateForm_mydelegate;
 
             InitDatagridview();
 
@@ -34,6 +41,23 @@ namespace ProjectDemo.form
             string endTime = reserve.EndTime;
 
             dataGridView1.Rows.Add(reserveId, memberName, memberPosition, memberTeamName, purpose, members, startTime, endTime);
+        }
+
+        private void ReserveUpdateForm_mydelegate(string reserveId, string updateReserveStartTime, string updateReserveEndTime)
+        {
+            dataGridView1.Rows.Clear();
+
+            Reserve findReserve = ReserveRepository.Instance.findById(long.Parse(reserveId));
+
+            dataGridView1.Rows.Add(
+                findReserve.Id.ToString(),
+                findReserve.Member.Name,
+                findReserve.Member.PositionStatus.ToString(),
+                findReserve.Member.Team.Name,
+                findReserve.Purpose,
+                findReserve.toStringMembers(),
+                updateReserveStartTime,
+                updateReserveEndTime);
         }
 
         private void InitDatagridview()
@@ -59,20 +83,20 @@ namespace ProjectDemo.form
 
             reserveUpdateForm.ShowDialog();
 
-            ReserveListForm.refreshDataGridView();
+            reserveListForm.refreshDataGridView();
         }
 
         private void reserveDeleteButton_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < ReserveListForm.ReserveDB.Count; i++)
             {
-                if (ReserveListForm.ReserveDB[i].Id == reserve.Id);
+                if (ReserveListForm.ReserveDB[i].Id == reserve.Id)
                 {
                     ReserveListForm.ReserveDB[i].IsDelete = true;
                 }
             }
 
-            ReserveListForm.refreshDataGridView();
+            reserveListForm.refreshDataGridView();
 
             Close();
 

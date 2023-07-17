@@ -15,38 +15,29 @@ namespace ProjectDemo
 {
     public partial class ReserveMembersCreateUpdateForm : Form
     {
-        private ReserveCreateForm reserveCreateForm;
-        private ReserveUpdateForm reserveUpdateForm;
-        public static List<Member> members = ReserveUpdateForm.members;
-        private Form whatForm;
+        public static List<Member> members;
 
-        public ReserveMembersCreateUpdateForm(Form form, int option)
+        public delegate void MyEventHandler1(string membersString);
+        public static event MyEventHandler1 myEventHandler1;
+
+        public delegate void MyEventHandler2(string membersString);
+        public static event MyEventHandler2 myEventHandler2;
+
+        public ReserveMembersCreateUpdateForm(Form form, List<Member> ms)
         {
             InitializeComponent();
+            members = ms;
             whatForm = form;
             if (form is ReserveCreateForm)
             {
-                ReserveCreateForm reserveCreateForm = (ReserveCreateForm)form;
-                this.reserveCreateForm = reserveCreateForm;
+                reserveMembersCreateUpdateButton.Text = "참여자들 생성";
             }
             else if (form is ReserveUpdateForm)
             {
-                ReserveUpdateForm reserveUpdateForm = (ReserveUpdateForm)form;
-                this.reserveUpdateForm = reserveUpdateForm;
-
-            }
-            if (option == 0)
-            {
-                reserveMembersCreateUpdateButton.Text = "참여자들 생성";
-            }
-            else if (option == 1)
-            {
                 reserveMembersCreateUpdateButton.Text = "참여자들 변경";
-            }
-        }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
+            }
+
             foreach (Member member in ReserveListForm.MemberDB)
             {
                 checkedListBox1.Items.Add(member.Name);
@@ -64,10 +55,11 @@ namespace ProjectDemo
                 }
             }
         }
-
+        
+        private Form whatForm;
         private void reserveMembersCreateUpdateButton_Click(object sender, EventArgs e)
         {
-            members = new List<Member>();
+            ReserveMembersCreateUpdateForm.members = new List<Member>();
             int memberCount = checkedListBox1.Items.Count;
             for (int i = 0; i < memberCount; i++)
             {
@@ -75,33 +67,27 @@ namespace ProjectDemo
                 {
                     string memberName = checkedListBox1.Items[i].ToString();
                     Member member = MemberRepository.Instance.findByName(memberName);
-                    members.Add(member);
+                    ReserveMembersCreateUpdateForm.members.Add(member);
                 }
             }
 
-            string memberNames = "";
-            foreach (Member member in members)
+            string membersString = "";
+            foreach (Member member in ReserveMembersCreateUpdateForm.members)
             {
-                memberNames += (member.Name + " ");
+                membersString += (member.Name + " ");
             }
             if (whatForm is ReserveCreateForm)
             {
-                reserveCreateForm.textBox1.Text = memberNames;
+                myEventHandler1(membersString);
             }
             else if (whatForm is ReserveUpdateForm)
             {
-                ReserveUpdateForm.dataGridView1.Rows[0].Cells[2].Value = memberNames;
+                //ReserveUpdateForm.dataGridView1.Rows[0].Cells[2].Value = membersString;
+                myEventHandler2(membersString);
             }
 
-
-
             Close();
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

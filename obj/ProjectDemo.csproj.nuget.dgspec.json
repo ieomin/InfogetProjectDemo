@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dlqja\\Desktop\\COMPANY\\ws\\ProjectDemo\\ProjectDemo.csproj": {}
+    "C:\\WORKSPACE\\ProjectDemo\\ProjectDemo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dlqja\\Desktop\\COMPANY\\ws\\ProjectDemo\\ProjectDemo.csproj": {
+    "C:\\WORKSPACE\\ProjectDemo\\ProjectDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dlqja\\Desktop\\COMPANY\\ws\\ProjectDemo\\ProjectDemo.csproj",
+        "projectUniqueName": "C:\\WORKSPACE\\ProjectDemo\\ProjectDemo.csproj",
         "projectName": "ProjectDemo",
-        "projectPath": "C:\\Users\\dlqja\\Desktop\\COMPANY\\ws\\ProjectDemo\\ProjectDemo.csproj",
+        "projectPath": "C:\\WORKSPACE\\ProjectDemo\\ProjectDemo.csproj",
         "packagesPath": "C:\\Users\\dlqja\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dlqja\\Desktop\\COMPANY\\ws\\ProjectDemo\\obj\\",
+        "outputPath": "C:\\WORKSPACE\\ProjectDemo\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\DevExpress 21.1\\.NET Core Desktop Libraries\\Offline Packages"
-        ],
         "configFilePaths": [
           "C:\\Users\\dlqja\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,7 +23,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files (x86)\\DevExpress 21.1\\.NET Core Desktop Libraries\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -79,7 +74,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

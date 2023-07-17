@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IIaays2L0tpAfUrSyDGxStsh6MgkCNbziBd7oebjUIBEkP9xj01RSi1NL5I0YwiyxbxAZJ0awdrXL+j7oUtMKg==",
+  "dgSpecHash": "zRtBZUSPkyOrqXEZqqNG0WhCi7McynHkE0FUAhDcPaZOWR17TZ2QxAXNoWzfPdLWZQbwxmNdY/Gpfmkakr2Ynw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dlqja\\Desktop\\COMPANY\\ws\\ProjectDemo\\ProjectDemo.csproj",
+  "projectFilePath": "C:\\WORKSPACE\\ProjectDemo\\ProjectDemo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dlqja\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
     "C:\\Users\\dlqja\\.nuget\\packages\\livecharts.winforms\\0.9.7.1\\livecharts.winforms.0.9.7.1.nupkg.sha512",

@@ -8,6 +8,6 @@ namespace ProjectDemo.entity
 {
     public enum MemberPositionStatus
     {
-        대표, 부사장, 책임, 선임, 주임
+        대표, 부사장, 상무이사, 책임, 선임, 주임
     }
 }

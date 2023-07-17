@@ -16,20 +16,16 @@ namespace ProjectDemo.form
     {
         private Reserve reserve;
 
-        private ReserveMemberCreateUpdateForm reserveMemberForm;
-        private ReserveMembersCreateUpdateForm reserveMembersForm;
+        private ReserveMembersCreateUpdateForm reserveMembersCreateForm;
 
-        // 다른 데서 갖다 쓸려고
-        public static Member member;
-        public static List<Member> members;
+        public delegate void MyDelegate(string reserveId, string updateReserveStartTime, string updateReserveEndTime);
+        public static event MyDelegate myDelegate;
 
         public ReserveUpdateForm(Reserve reserve)
         {
             InitializeComponent();
             InitDatagridview();
             this.reserve = reserve;
-            member = reserve.Member;
-            members = reserve.Members;
 
             string id = reserve.Id.ToString();
             string memberName = reserve.Member.Name;
@@ -44,6 +40,14 @@ namespace ProjectDemo.form
             SetComboBoxCell(5, 0, ReserveListForm.timeDB, endTime);
 
             dataGridView1.Rows[0].Cells[0].ReadOnly = true;
+
+            ReserveMembersCreateUpdateForm.members = reserve.Members;
+            ReserveMembersCreateUpdateForm.myEventHandler2 += ReserveMembersCreateUpdateForm_myEventHandler2;
+        }
+
+        private void ReserveMembersCreateUpdateForm_myEventHandler2(string membersString)
+        {
+            dataGridView1.Rows[0].Cells[2].Value = membersString;
         }
 
         private void InitDatagridview()
@@ -56,31 +60,21 @@ namespace ProjectDemo.form
             dataGridView1.Columns.Add("?", "종료시간");
         }
 
-        private void reserveMemberUpdateButton_Click(object sender, EventArgs e)
-        {
-            if (reserveMemberForm != null)
-            {
-                reserveMemberForm.Dispose();
-                reserveMemberForm = null;
-            }
-            reserveMemberForm = new ReserveMemberCreateUpdateForm(this, 1);
-            reserveMemberForm.Show();
-        }
-
         private void reserveMembersUpdateButton_Click(object sender, EventArgs e)
         {
-            if (reserveMembersForm != null)
+            if (reserveMembersCreateForm != null)
             {
-                reserveMembersForm.Dispose();
-                reserveMembersForm = null;
+                reserveMembersCreateForm.Dispose();
+                reserveMembersCreateForm = null;
             }
-            reserveMembersForm = new ReserveMembersCreateUpdateForm(this, 1);
-            reserveMembersForm.Show();
+            reserveMembersCreateForm = new ReserveMembersCreateUpdateForm(this, reserve.Members);
+            reserveMembersCreateForm.Show();
         }
 
         private void reserveUpdateButton_Click(object sender, EventArgs e)
         {
             string reserveId = dataGridView1.Rows[0].Cells[0].Value.ToString();
+
             string updateReservePurpose = dataGridView1.Rows[0].Cells[3].Value.ToString();
             string updateReserveStartTime = dataGridView1.Rows[0].Cells[4].Value.ToString();
             string updateReserveEndTime = dataGridView1.Rows[0].Cells[5].Value.ToString();
@@ -89,7 +83,6 @@ namespace ProjectDemo.form
             {
                 if (ReserveListForm.ReserveDB[i].Id.ToString() == reserveId)
                 {
-                    ReserveListForm.ReserveDB[i].Member = ReserveMemberCreateUpdateForm.member;
                     ReserveListForm.ReserveDB[i].Members = ReserveMembersCreateUpdateForm.members;
                     ReserveListForm.ReserveDB[i].Purpose = updateReservePurpose;
                     ReserveListForm.ReserveDB[i].StartTime = updateReserveStartTime;
@@ -97,19 +90,21 @@ namespace ProjectDemo.form
                 }
             }
 
-            ReserveDetailForm.dataGridView1.Rows.Clear();
+            //ReserveDetailForm.dataGridView1.Rows.Clear();
 
-            Reserve findReserve = ReserveRepository.Instance.findById(long.Parse(reserveId));
+            //Reserve findReserve = ReserveRepository.Instance.findById(long.Parse(reserveId));
 
-            ReserveDetailForm.dataGridView1.Rows.Add(
-                findReserve.Id.ToString(),
-                findReserve.Member.Name,
-                findReserve.Member.PositionStatus.ToString(),
-                findReserve.Member.Team.Name,
-                findReserve.Purpose,
-                findReserve.toStringMembers(),
-                updateReserveStartTime,
-                updateReserveEndTime);
+            //ReserveDetailForm.dataGridView1.Rows.Add(
+            //    findReserve.Id.ToString(),
+            //    findReserve.Member.Name,
+            //    findReserve.Member.PositionStatus.ToString(),
+            //    findReserve.Member.Team.Name,
+            //    findReserve.Purpose,
+            //    findReserve.toStringMembers(),
+            //    updateReserveStartTime,
+            //    updateReserveEndTime);
+            myDelegate(reserveId, updateReserveStartTime, updateReserveEndTime);
+
 
             Close();
         }
